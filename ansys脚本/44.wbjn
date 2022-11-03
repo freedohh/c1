@@ -1,0 +1,36 @@
+﻿# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+template1 = GetTemplate(
+    TemplateName="Harmonic Response",
+    Solver="ANSYS")
+system1 = GetSystem(Name="RMxprtDesign1")
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+system2.Delete()
+system3 = GetSystem(Name="Maxwell2DDesign1")
+maxwell2DSolutionComponent1 = system3.GetComponent(Name="Maxwell2DSolution")
+componentTemplate1 = GetComponentTemplate(Name="SimulationSetupCellTemplate_StructuralHarmonicANSYS")
+system4 = template1.CreateSystem(
+    DataTransferFrom=[Set(FromComponent=maxwell2DSolutionComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    RelativeTo=system3)
+setupComponent1 = system4.GetComponent(Name="Setup")
+setupComponent1.Update(AllDependencies=True)
+setup1 = system4.GetContainer(ComponentName="Setup")
+setup1.Edit()
+system5 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+system5.Delete()
+model1 = system4.GetContainer(ComponentName="Model")
+model1.Exit()
+system4.Delete()
+system6 = template1.CreateSystem(
+    DataTransferFrom=[Set(FromComponent=maxwell2DSolutionComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    RelativeTo=system3)
+setupComponent2 = system6.GetComponent(Name="Setup")
+setupComponent2.Update(AllDependencies=True)
+setupComponent2.Update(AllDependencies=True)
+setup2 = system6.GetContainer(ComponentName="Setup")
+setup2.Edit()

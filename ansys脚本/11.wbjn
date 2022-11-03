@@ -1,0 +1,937 @@
+﻿# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+template1 = GetTemplate(TemplateName="RMxprt Design")
+system1 = template1.CreateSystem()
+Ansoft.EditSystem(System=system1)
+string1 = Ansoft.ExecuteGenericDesktopCommand(
+    System=system1,
+    CommandClass="WB_ACTIVATE_GIVEN_SYSTEMID",
+    Argument="Maxwell",
+    ExecuteOnlyIfSystemIsAlreadyOpenInDesktop=True)
+system1.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("RMxprtDesign1").SetDesignFlow("RMxprtSolution", "PMDC")')
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Machine\",
+			[
+				\"NAME:PropServers\", 
+				\"Machine\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Number of Poles\",
+					\"Value:=\"		, \"4\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Machine\",
+			[
+				\"NAME:PropServers\", 
+				\"Machine\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Frictional Loss\",
+					\"Value:=\"		, \"1.5W\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Machine\",
+			[
+				\"NAME:PropServers\", 
+				\"Machine\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Windage Loss\",
+					\"Value:=\"		, \"0.5W\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Machine\",
+			[
+				\"NAME:PropServers\", 
+				\"Machine\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Reference Speed\",
+					\"Value:=\"		, \"3000rpm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Stator\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Outer Diameter\",
+					\"Value:=\"		, \"38.2mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Stator\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Inner Diameter\",
+					\"Value:=\"		, \"29.2mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Stator\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Length\",
+					\"Value:=\"		, \"68mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Stator\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Stacking Factor\",
+					\"Value:=\"		, \"1\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Stator\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Steel Type\",
+					\"Material:=\"		, \"steel_1008\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Pole\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator:Pole\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Embrace\",
+					\"Value:=\"		, \"0.867\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").GetDefinitionManager().EditMaterial(\"TDK_FB6B_20cel\", 
+	[
+		\"NAME:TDK_FB6B_20cel\",
+		\"CoordinateSystemType:=\", \"Cartesian\",
+		\"BulkOrSurfaceType:=\"	, 1,
+		[
+			\"NAME:PhysicsTypes\",
+			\"set:=\"			, [\"Electromagnetic\"]
+		],
+		[
+			\"NAME:permeability\",
+			\"property_type:=\"	, \"nonlinear\",
+			\"BTypeForSingleCurve:=\"	, \"normal\",
+			\"HUnit:=\"		, \"A_per_meter\",
+			\"BUnit:=\"		, \"tesla\",
+			\"IsTemperatureDependent:=\", False,
+			[
+				\"NAME:BHCoordinates\",
+				[
+					\"NAME:DimUnits\", 
+					\"\", 
+					\"\"
+				],
+				[
+					\"NAME:Point\", 
+					-302394.391874601, 
+					0
+				],
+				[
+					\"NAME:Point\", 
+					-151197.195937301, 
+					0.19
+				],
+				[
+					\"NAME:Point\", 
+					0, 
+					0.38
+				]
+			],
+			[
+				\"NAME:Temperatures\"
+			]
+		],
+		[
+			\"NAME:magnetic_coercivity\",
+			\"property_type:=\"	, \"VectorProperty\",
+			\"Magnitude:=\"		, \"-302394.391874601A_per_meter\",
+			\"DirComp1:=\"		, \"1\",
+			\"DirComp2:=\"		, \"0\",
+			\"DirComp3:=\"		, \"0\"
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Pole\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator:Pole\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Magnet Type\",
+					\"Material:=\"		, \"TDK_FB6B_20cel\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Pole\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator:Pole\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Magnet Length\",
+					\"Value:=\"		, \"48mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Pole\",
+			[
+				\"NAME:PropServers\", 
+				\"Stator:Pole\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Magnet Thickness\",
+					\"Value:=\"		, \"2.9mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Number of Slots\",
+					\"Value:=\"		, \"14\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Slot Type\",
+					\"SlotType:=\"		, \"2\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Outer Diameter\",
+					\"Value:=\"		, \"28.3mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Inner Diameter\",
+					\"Value:=\"		, \"6mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Length\",
+					\"Value:=\"		, \"40mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Steel Type\",
+					\"Material:=\"		, \"JFE_Steel_50JN1300\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Rotor\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Skew Width\",
+					\"Value:=\"		, \"1\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Auto Design\",
+					\"Value:=\"		, False
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Hs0\",
+					\"Value:=\"		, \"0.6mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Hs1\",
+					\"Value:=\"		, \"0.6mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Hs2\",
+					\"Value:=\"		, \"6.82mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Bs0\",
+					\"Value:=\"		, \"1.3mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Bs1\",
+					\"Value:=\"		, \"4.46mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Slot\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Slot\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Bs2\",
+					\"Value:=\"		, \"1.36mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Winding\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Conductors per Slot\",
+					\"Value:=\"		, \"70\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Winding\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Coil Pitch\",
+					\"Value:=\"		, \"3\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Winding\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Number of Strands\",
+					\"Value:=\"		, \"1\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Winding\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Wire Wrap\",
+					\"Value:=\"		, \"0.04mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Winding\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Wire Size\",
+					\"WireSizeWireDiameter:=\", \"0.31mm\",
+					\"WireSizeGauge:=\"	, \"0\",
+					\"WireSizeWireWidth:=\"	, \"0mm\",
+					\"WireSizeWireThickness:=\", \"0mm\",
+					\"WireSizeMixedWireRectType:=\", True,
+					[
+						\"NAME:WireSizeMixedDiameter\"
+					],
+					[
+						\"NAME:WireSizeMixedWidth\"
+					],
+					[
+						\"NAME:WireSizeMixedThickness\"
+					],
+					[
+						\"NAME:WireSizeMixedThicknessMixedFillet\"
+					],
+					[
+						\"NAME:WireSizeMixedThicknessMixedNumber\"
+					]
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Input Half-turn Length\",
+					\"Value:=\"		, True
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Half Turn Length\",
+					\"Value:=\"		, \"60mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Base Inner Radius\",
+					\"Value:=\"		, \"10mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Tip Inner Diameter\",
+					\"Value:=\"		, \"5mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Slot Liner\",
+					\"Value:=\"		, \"0.25mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:End/Insulation\",
+			[
+				\"NAME:PropServers\", 
+				\"Rotor:Winding\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Limited Fill Factor\",
+					\"Value:=\"		, \"0.53\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Commutator\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Commutator Diameter\",
+					\"Value:=\"		, \"14.85mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Commutator\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Commutator Length\",
+					\"Value:=\"		, \"12mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Commutator\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Commutator Insulation\",
+					\"Value:=\"		, \"0.4mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Brush\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Brush Width\",
+					\"Value:=\"		, \"3.5mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Brush\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Brush Length\",
+					\"Value:=\"		, \"4.5mm\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Brush\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Brush Pairs\",
+					\"Value:=\"		, \"2\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Brush\",
+			[
+				\"NAME:PropServers\", 
+				\"Commutator\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Brush Drop\",
+					\"Value:=\"		, \"0.6V\"
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetActiveEditor(\"Machine\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Shaft\",
+			[
+				\"NAME:PropServers\", 
+				\"Shaft\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Magnetic Shaft\",
+					\"Value:=\"		, False
+				]
+			]
+		]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").SetDesignSettings(
+	[
+		\"NAME:Design Settings Data\",
+		\"Steel Threshold:=\"	, 100,
+		\"Conductor Threshold:=\"	, 100000,
+		\"Excel Template Path:=\"	, \"\",
+		\"UDDEnabled:=\"		, True,
+		\"UDD:=\"			, [\"Fractions 1\"]
+	])""")
+system1.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"RMxprtDesign1\").GetModule(\"AnalysisSetup\").InsertSetup(\"PMDC\", 
+	[
+		\"NAME:Setup1\",
+		\"Enabled:=\"		, True,
+		[
+			\"NAME:MeshLink\",
+			\"ImportMesh:=\"		, False
+		],
+		\"RatedOutputPower:=\"	, \"25W\",
+		\"RatedVoltage:=\"	, \"13V\",
+		\"RatedSpeed:=\"		, \"3000rpm\",
+		\"OperatingTemperature:=\", \"75cel\",
+		\"OperationType:=\"	, \"Motor\",
+		\"LoadType:=\"		, \"ConstSpeed\"
+	])""")
+system1.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").Save()')
+system1.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("RMxprtDesign1").AnalyzeAllNominal()')

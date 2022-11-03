@@ -1,0 +1,10 @@
+from pywinauto.application import Application
+mainwindow = Application(backend='uia').connect(title="未保存的项目 - Workbench")
+dig = mainwindow.window(title="未保存的项目 - Workbench")
+dig.restore()
+to = dig.child_window(title='文件', control_type='MenuItem')
+to.click_input()
+too = dig.child_window(title='脚本',class_name='MenuItem')
+too.click_input()
+to = dig.child_window(title="录制脚本......", control_type="MenuItem")
+to.click_input()

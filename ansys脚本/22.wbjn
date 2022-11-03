@@ -1,0 +1,478 @@
+﻿# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+system1 = GetSystem(Name="Maxwell")
+system1.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("RMxprtDesign1").GetModule("AnalysisSetup").CreateMaxwellDesign(0, "Setup1", "")')
+system2 = GetSystem(Name="Maxwell 2D Design")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Fillet(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Mag_0,Mag_3,Mag_1,Mag_2\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:Parameters\",
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [44,45],
+			\"Radius:=\"		, \"0.6mm\",
+			\"Setback:=\"		, \"0mm\"
+		],
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [79,78],
+			\"Radius:=\"		, \"0.6mm\",
+			\"Setback:=\"		, \"0mm\"
+		],
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [56,57],
+			\"Radius:=\"		, \"0.6mm\",
+			\"Setback:=\"		, \"0mm\"
+		],
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [68,67],
+			\"Radius:=\"		, \"0.6mm\",
+			\"Setback:=\"		, \"0mm\"
+		]
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Chamfer(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Mag_2,Mag_3,Mag_0,Mag_1\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:Parameters\",
+		[
+			\"NAME:ChamferParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [69,70],
+			\"LeftDistance:=\"	, \"0.5mm\",
+			\"RightDistance:=\"	, \"0.5mm\",
+			\"ChamferType:=\"		, \"Symmetric\"
+		],
+		[
+			\"NAME:ChamferParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [81,80],
+			\"LeftDistance:=\"	, \"0.5mm\",
+			\"RightDistance:=\"	, \"0.5mm\",
+			\"ChamferType:=\"		, \"Symmetric\"
+		],
+		[
+			\"NAME:ChamferParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [47,46],
+			\"LeftDistance:=\"	, \"0.5mm\",
+			\"RightDistance:=\"	, \"0.5mm\",
+			\"ChamferType:=\"		, \"Symmetric\"
+		],
+		[
+			\"NAME:ChamferParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [59,58],
+			\"LeftDistance:=\"	, \"0.5mm\",
+			\"RightDistance:=\"	, \"0.5mm\",
+			\"ChamferType:=\"		, \"Symmetric\"
+		]
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Fillet(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Rotor\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:Parameters\",
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [381,380,382,383,402,401,403,404,423,422,425,424,443,444,446,445,464,465,467,486,485,466,488,487,506,507,509,508,527,528,529,530,548,549,551,550,569,570,572,571,590,591,593,592,612,611,613,614,632,634,635,633,654,653,655,656],
+			\"Radius:=\"		, \"0.2mm\",
+			\"Setback:=\"		, \"0mm\"
+		]
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Fillet(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Rotor\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:Parameters\",
+		[
+			\"NAME:FilletParameters\",
+			\"Edges:=\"		, [],
+			\"Vertices:=\"		, [552,547,531,526,510,505,489,484,468,463,447,442,426,421,405,400,384,673,657,652,636,631,610,615,594,589,573,568],
+			\"Radius:=\"		, \"0.3mm\",
+			\"Setback:=\"		, \"0mm\"
+		]
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").CreateCircle(
+	[
+		\"NAME:CircleParameters\",
+		\"IsCovered:=\"		, True,
+		\"XCenter:=\"		, \"0mm\",
+		\"YCenter:=\"		, \"0mm\",
+		\"ZCenter:=\"		, \"0mm\",
+		\"Radius:=\"		, \"12.8654184441361mm\",
+		\"WhichAxis:=\"		, \"Z\",
+		\"NumSegments:=\"		, \"0\"
+	], 
+	[
+		\"NAME:Attributes\",
+		\"Name:=\"		, \"Circle1\",
+		\"Flags:=\"		, \"\",
+		\"Color:=\"		, \"(143 175 143)\",
+		\"Transparency:=\"	, 0,
+		\"PartCoordinateSystem:=\", \"Global\",
+		\"UDMId:=\"		, \"\",
+		\"MaterialValue:=\"	, \"\\\"vacuum\\\"\",
+		\"SurfaceMaterialValue:=\", \"\\\"\\\"\",
+		\"SolveInside:=\"		, True,
+		\"ShellElement:=\"	, False,
+		\"ShellElementThickness:=\", \"0mm\",
+		\"IsMaterialEditable:=\"	, True,
+		\"UseMaterialAppearance:=\", False,
+		\"IsLightweight:=\"	, False
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Copy(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Rotor\"
+	])""")
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").SetActiveEditor("3D Modeler").Paste()')
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Subtract(
+	[
+		\"NAME:Selections\",
+		\"Blank Parts:=\"		, \"Rotor1\",
+		\"Tool Parts:=\"		, \"Circle1\"
+	], 
+	[
+		\"NAME:SubtractParameters\",
+		\"KeepOriginals:=\"	, False
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Subtract(
+	[
+		\"NAME:Selections\",
+		\"Blank Parts:=\"		, \"Rotor\",
+		\"Tool Parts:=\"		, \"Rotor1\"
+	], 
+	[
+		\"NAME:SubtractParameters\",
+		\"KeepOriginals:=\"	, True
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"MeshSetup\").AssignLengthOp(
+	[
+		\"NAME:Length1\",
+		\"RefineInside:=\"	, True,
+		\"Enabled:=\"		, True,
+		\"Objects:=\"		, [\"Rotor1\"],
+		\"RestrictElem:=\"	, False,
+		\"NumMaxElem:=\"		, \"1000\",
+		\"RestrictLength:=\"	, True,
+		\"MaxLength:=\"		, \"0.5mm\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"MeshSetup\").AssignLengthOp(
+	[
+		\"NAME:Length2\",
+		\"RefineInside:=\"	, False,
+		\"Enabled:=\"		, True,
+		\"Edges:=\"		, [53,1330,52,66,1338,63,1365,1345,1324,64,1337,1344,77,1352,74,43,1317,40,1359,75,1323,1351,1316,41,1358,55,1331,1366],
+		\"RestrictElem:=\"	, False,
+		\"NumMaxElem:=\"		, \"1000\",
+		\"RestrictLength:=\"	, True,
+		\"MaxLength:=\"		, \"0.5mm\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"MeshSetup\").AssignLengthOp(
+	[
+		\"NAME:Length3\",
+		\"RefineInside:=\"	, False,
+		\"Enabled:=\"		, True,
+		\"Edges:=\"		, [8],
+		\"RestrictElem:=\"	, False,
+		\"NumMaxElem:=\"		, \"1000\",
+		\"RestrictLength:=\"	, True,
+		\"MaxLength:=\"		, \"0.5mm\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"MeshSetup\").AssignTrueSurfOp(
+	[
+		\"NAME:SurfApprox1\",
+		\"Objects:=\"		, [\"Rotor1\",\"Mag_0\",\"Mag_2\",\"Mag_1\",\"Mag_3\",\"Band\",\"InnerRegion\"],
+		\"CurvedSurfaceApproxChoice:=\", \"ManualSettings\",
+		\"SurfDevChoice:=\"	, 2,
+		\"SurfDev:=\"		, \"0.001mm\",
+		\"NormalDevChoice:=\"	, 2,
+		\"NormalDev:=\"		, \"3deg\",
+		\"AspectRatioChoice:=\"	, 1
+	])""")
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").Save()')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GenerateMesh(["Setup1"])')
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").CreateCircle(
+	[
+		\"NAME:CircleParameters\",
+		\"IsCovered:=\"		, True,
+		\"XCenter:=\"		, \"0mm\",
+		\"YCenter:=\"		, \"0mm\",
+		\"ZCenter:=\"		, \"0mm\",
+		\"Radius:=\"		, \"14.59mm\",
+		\"WhichAxis:=\"		, \"Z\",
+		\"NumSegments:=\"		, \"0\"
+	], 
+	[
+		\"NAME:Attributes\",
+		\"Name:=\"		, \"Circle2\",
+		\"Flags:=\"		, \"\",
+		\"Color:=\"		, \"(143 175 143)\",
+		\"Transparency:=\"	, 0,
+		\"PartCoordinateSystem:=\", \"Global\",
+		\"UDMId:=\"		, \"\",
+		\"MaterialValue:=\"	, \"\\\"vacuum\\\"\",
+		\"SurfaceMaterialValue:=\", \"\\\"\\\"\",
+		\"SolveInside:=\"		, True,
+		\"ShellElement:=\"	, False,
+		\"ShellElementThickness:=\", \"0mm\",
+		\"IsMaterialEditable:=\"	, True,
+		\"UseMaterialAppearance:=\", False,
+		\"IsLightweight:=\"	, False
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").CreateObjectFromEdges(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Circle2\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:Parameters\",
+		[
+			\"NAME:BodyFromEdgeToParameters\",
+			\"Edges:=\"		, [2893]
+		]
+	], 
+	[
+		\"CreateGroupsForNewObjects:=\", False
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").ChangeProperty(
+	[
+		\"NAME:AllTabs\",
+		[
+			\"NAME:Geometry3DAttributeTab\",
+			[
+				\"NAME:PropServers\", 
+				\"Circle2_ObjectFromEdge1\"
+			],
+			[
+				\"NAME:ChangedProps\",
+				[
+					\"NAME:Model\",
+					\"Value:=\"		, False
+				]
+			]
+		]
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Delete(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Circle2\"
+	])""")
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").EnterQty("B")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").XForm("Cylindrical", ["0mm", "0mm", "0mm"])')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("ScalarX")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").AddNamedExpression("Br", "Fields")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").EnterQty("B")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").XForm("Cylindrical", ["0mm", "0mm", "0mm"])')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("ScalarY")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").AddNamedExpression("Bt", "Fields")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Br")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Br")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("*")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Bt")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Bt")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("*")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("-")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").EnterScalar(1.25663706143592E-06)')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").EnterScalar(2)')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("*")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("/")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").AddNamedExpression("Fr", "Fields")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Br")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CopyNamedExprToStack("Bt")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("*")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").EnterScalar(1.25663706143592E-06)')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").CalcOp("/")')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").GetModule("FieldsReporter").AddNamedExpression("Ft", "Fields")')
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").Move(
+	[
+		\"NAME:Selections\",
+		\"Selections:=\"		, \"Coil_0,Coil_1,Coil_2,Coil_3,Coil_4,Coil_5,Coil_6,Coil_7,Coil_8,Coil_9,Coil_10,Coil_11,Coil_12,Coil_13,CoilRe_0,CoilRe_1,CoilRe_2,CoilRe_3,CoilRe_4,CoilRe_5,CoilRe_6,CoilRe_7,CoilRe_8,CoilRe_9,CoilRe_10,CoilRe_11,CoilRe_12,CoilRe_13,Rotor,Rotor1,Band,InnerRegion,Shaft\",
+		\"NewPartsModelFlag:=\"	, \"Model\"
+	], 
+	[
+		\"NAME:TranslateParameters\",
+		\"TranslateVectorX:=\"	, \"0mm\",
+		\"TranslateVectorY:=\"	, \"0.02mm\",
+		\"TranslateVectorZ:=\"	, \"0mm\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetActiveEditor(\"3D Modeler\").CreateRelativeCS(
+	[
+		\"NAME:RelativeCSParameters\",
+		\"Mode:=\"		, \"Euler Angle ZYZ\",
+		\"OriginX:=\"		, \"0mm\",
+		\"OriginY:=\"		, \"0.02mm\",
+		\"OriginZ:=\"		, \"0mm\",
+		\"Psi:=\"			, \"0deg\",
+		\"Theta:=\"		, \"0deg\",
+		\"Phi:=\"			, \"0deg\"
+	], 
+	[
+		\"NAME:Attributes\",
+		\"Name:=\"		, \"RelativeCS1\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"ModelSetup\").EditMotionSetup(\"MotionSetup1\", 
+	[
+		\"NAME:Data\",
+		\"Move Type:=\"		, \"Rotate\",
+		\"Coordinate System:=\"	, \"RelativeCS1\",
+		\"Axis:=\"		, \"Z\",
+		\"Is Positive:=\"		, True,
+		\"InitPos:=\"		, \"-6.42857deg\",
+		\"HasRotateLimit:=\"	, False,
+		\"NonCylindrical:=\"	, False,
+		\"Consider Mechanical Transient:=\", False,
+		\"Angular Velocity:=\"	, \"3000rpm\"
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"AnalysisSetup\").EditSetup(\"Setup1\", 
+	[
+		\"NAME:Setup1\",
+		\"Enabled:=\"		, True,
+		[
+			\"NAME:MeshLink\",
+			\"ImportMesh:=\"		, False
+		],
+		\"NonlinearSolverResidual:=\", \"0.0001\",
+		\"TimeIntegrationMethod:=\", \"BackwardEuler\",
+		\"SmoothBHCurve:=\"	, False,
+		\"StopTime:=\"		, \"0.025s\",
+		\"TimeStep:=\"		, \"(60/3000/240) s\",
+		\"OutputError:=\"		, False,
+		\"OutputPerObjectCoreLoss:=\", False,
+		\"OutputPerObjectSolidLoss:=\", False,
+		\"UseControlProgram:=\"	, False,
+		\"ControlProgramName:=\"	, \" \",
+		\"ControlProgramArg:=\"	, \" \",
+		\"CallCtrlProgAfterLastStep:=\", False,
+		\"FastReachSteadyState:=\", False,
+		\"AutoDetectSteadyState:=\", False,
+		\"IsGeneralTransient:=\"	, True,
+		\"IsHalfPeriodicTransient:=\", False,
+		\"SaveFieldsType:=\"	, \"Every N Steps\",
+		\"N Steps:=\"		, \"1\",
+		\"Steps From:=\"		, \"0.005s\",
+		\"Steps To:=\"		, \"0.025s\",
+		\"UseNonLinearIterNum:=\"	, False,
+		\"CacheSaveKind:=\"	, \"Count\",
+		\"NumberSolveSteps:=\"	, 1,
+		\"RangeStart:=\"		, \"0s\",
+		\"RangeEnd:=\"		, \"0.1s\",
+		\"UseAdaptiveTimeStep:=\"	, False,
+		\"InitialTimeStep:=\"	, \"0.002s\",
+		\"MinTimeStep:=\"		, \"0.001s\",
+		\"MaxTimeStep:=\"		, \"0.003s\",
+		\"TimeStepErrTolerance:=\", 0.0001
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").SetDesignSettings(
+	[
+		\"NAME:Design Settings Data\",
+		\"Perform Minimal validation:=\", False,
+		\"EnabledObjects:=\"	, [],
+		\"PreserveTranSolnAfterDatasetEdit:=\", False,
+		\"ComputeTransientInductance:=\", False,
+		\"ComputeIncrementalMatrix:=\", False,
+		\"PerfectConductorThreshold:=\", 1E+30,
+		\"InsulatorThreshold:=\"	, 1,
+		\"ModelDepth:=\"		, \"40mm\",
+		\"UseSkewModel:=\"	, False,
+		\"EnableTranTranLinkWithSimplorer:=\", False,
+		\"BackgroundMaterialName:=\", \"vacuum\",
+		\"SolveFraction:=\"	, False,
+		\"Multiplier:=\"		, \"fractions\"
+	], 
+	[
+		\"NAME:Model Validation Settings\",
+		\"EntityCheckLevel:=\"	, \"Strict\",
+		\"IgnoreUnclassifiedObjects:=\", True,
+		\"SkipIntersectionChecks:=\", False
+	])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").EnableHarmonicForceCalculation(
+	[
+		\"EnabledObjects:=\"	, [\"Mag_0\",\"Mag_1\",\"Mag_2\",\"Mag_3\"],
+		\"ForceType:=\"		, 1,
+		\"WindowFunctionType:=\"	, \"Rectangular\",
+		\"NumberOfRepeatedSamples:=\", \"1\",
+		\"UseNumberOfLastCycles:=\", True,
+		\"NumberOfLastCycles:=\"	, 1,
+		\"StartTime:=\"		, \"0s\",
+		\"UseNumberOfCyclesForStopTime:=\", True,
+		\"NumberOfCyclesForStopTime:=\", 1,
+		\"StopTime:=\"		, \"0.01s\",
+		\"OutputFreqRangeType:=\"	, \"Use All\"
+	])""")
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").Save()')
+system2.SendAnsoftCommand(PyCommand='oDesktop.SetActiveProject("MaxwellProject").SetActiveDesign("Maxwell2DDesign1").Analyze("Setup1")')
+template1 = GetTemplate(
+    TemplateName="Harmonic Response",
+    Solver="ANSYS")
+maxwell2DSolutionComponent1 = system2.GetComponent(Name="Maxwell2DSolution")
+componentTemplate1 = GetComponentTemplate(Name="SimulationSetupCellTemplate_StructuralHarmonicANSYS")
+system3 = template1.CreateSystem(
+    DataTransferFrom=[Set(FromComponent=maxwell2DSolutionComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    RelativeTo=system2)
+setupComponent1 = system3.GetComponent(Name="Setup")
+setupComponent1.Update(AllDependencies=True)
+setup1 = system3.GetContainer(ComponentName="Setup")
+setup1.Edit()
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"UserDefinedSolutionModule\").CreateUserDefinedSolution(\"FFT2D1\", \"SysLib\", \"FFT2D\", 
+	[
+		\"Order of time domain:=\", \"98\",
+		\"Order of space domain:=\", \"2\",
+		\"Export FFT2D datatable ?:=\", \"No\",
+		\"Maximum time order:=\"	, \"0\",
+		\"Maximum space order:=\"	, \"0\"
+	], 
+	[
+		[
+\"Fields\",
+\"FieldReport\",
+\"Setup1 : Transient\",
+			[
+				\"Context:=\"		, \"Circle2_ObjectFromEdge1\",
+				\"PointCount:=\"		, 512
+			],
+			[
+				\"Distance:=\"		, [\"All\"],
+				\"Time:=\"		, [\"All\"]
+			],
+			[
+				\"Probe Component:=\"	, [\"Fr\"]
+			]
+		]
+	], [])""")
+system2.SendAnsoftCommand(PyCommand="""oDesktop.SetActiveProject(\"MaxwellProject\").SetActiveDesign(\"Maxwell2DDesign1\").GetModule(\"ReportSetup\").CreateReport(\"XY Plot 1\", \"User Defined\", \"Rectangular Plot\", \"FFT2D1\", 
+	[
+		\"Context:=\"		, \"\"
+	], 
+	[
+		\"Distance:=\"		, [\"All\"],
+		\"Time:=\"		, [\"All\"],
+		\"fractions:=\"		, [\"Nominal\"]
+	], 
+	[
+		\"X Component:=\"		, \"Distance\",
+		\"Y Component:=\"		, [\"Mag\"]
+	])""")
